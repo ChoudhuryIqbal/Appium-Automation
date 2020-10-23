@@ -1,14 +1,18 @@
 package com.appium.mobileFramework;
 
-import java.net.MalformedURLException;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
 public class sampleTest {
-	public static void main(String[] args) throws MalformedURLException {
-		AndroidDriver<AndroidElement> driver = Base.capabilities();
+	
+	@Test
+	public void firstTest()throws IOException {
+		AndroidDriver<AndroidElement> driver = Base.capabilities("GeneralStoreApp");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		// driver.findElementById("com.androidsample.generalstore:id/nameField").sendKeys("Hello");
 		// Option to hide keyboard
